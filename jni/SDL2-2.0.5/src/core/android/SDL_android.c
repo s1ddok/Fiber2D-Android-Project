@@ -245,7 +245,7 @@ JNIEXPORT void JNICALL Java_org_libsdl_app_SDLActivity_onNativeSurfaceChanged(JN
             ANativeWindow_release(data->native_window);
         }
         data->native_window = Android_JNI_GetNativeWindow();
-        data->egl_surface = SDL_EGL_CreateSurface(_this, (NativeWindowType) data->native_window);
+        //data->egl_surface = SDL_EGL_CreateSurface(_this, (NativeWindowType) data->native_window);
     }
     
     /* GL Context handling is done in the event loop because this function is run from the Java thread */
@@ -271,7 +271,7 @@ JNIEXPORT void JNICALL Java_org_libsdl_app_SDLActivity_onNativeSurfaceDestroyed(
     
     if (data->egl_surface != EGL_NO_SURFACE) {
         SDL_EGL_MakeCurrent(_this, NULL, NULL);
-        SDL_EGL_DestroySurface(_this, data->egl_surface);
+        //SDL_EGL_DestroySurface(_this, data->egl_surface);
         data->egl_surface = EGL_NO_SURFACE;
     }
     

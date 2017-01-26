@@ -70,13 +70,13 @@ Android_CreateWindow(_THIS, SDL_Window * window)
         return SDL_SetError("Could not fetch native window");
     }
 
-    //data->egl_surface = SDL_EGL_CreateSurface(_this, (NativeWindowType) data->native_window);
+    /*data->egl_surface = SDL_EGL_CreateSurface(_this, (NativeWindowType) data->native_window);
 
     if (data->egl_surface == EGL_NO_SURFACE) {
         ANativeWindow_release(data->native_window);
         SDL_free(data);
         return SDL_SetError("Could not create GLES window surface");
-    }
+    }*/
 
     window->driverdata = data;
     Android_Window = window;
